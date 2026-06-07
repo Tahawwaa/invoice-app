@@ -11,9 +11,6 @@ A lightweight invoice generator built with vanilla HTML, CSS, and JavaScript —
 
 ---
 
-
----
-
 ## 🚀 Getting Started
 
 ```bash
@@ -22,9 +19,6 @@ cd invoice-app
 ```
 
 Open `index.html` in your browser — that's it.
-
----
-
 
 ---
 
