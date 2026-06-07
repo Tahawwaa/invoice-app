@@ -74,6 +74,7 @@ input:focus {
 /* ===== INVOICE CONTAINER ===== */
 .invoice-wrap {
   width: 297mm;
+  max-width: calc(100% - 20px);
   min-height: 210mm;
   margin: 70px auto 40px;
   background: #fff;
@@ -344,6 +345,132 @@ input:focus {
   font-size: 11px;
 }
 .footer-input.short { max-width: 100px; }
+
+/* ===== RESPONSIVE - TABLET (max 1024px) ===== */
+@media screen and (max-width: 1024px) {
+  .invoice-wrap {
+    width: calc(100% - 40px);
+    padding: 8mm 10mm;
+  }
+}
+
+/* ===== RESPONSIVE - SMALL TABLET (max 768px) ===== */
+@media screen and (max-width: 768px) {
+  .invoice-wrap {
+    width: calc(100% - 24px);
+    margin: 66px 12px 24px;
+    padding: 14px 12px;
+  }
+
+  .btn {
+    padding: 7px 12px;
+    font-size: 12px;
+  }
+
+  .inv-title { font-size: 16px; }
+
+  .col-price { width: 90px; }
+  .col-total { width: 90px; }
+}
+
+/* ===== RESPONSIVE - MOBILE (max 600px) ===== */
+@media screen and (max-width: 600px) {
+  body { font-size: 11px; }
+
+  .toolbar {
+    padding: 6px 10px;
+    gap: 6px;
+    justify-content: center;
+  }
+
+  .btn {
+    padding: 6px 10px;
+    font-size: 11px;
+    flex: 1;
+    min-width: 0;
+    text-align: center;
+  }
+
+  .invoice-wrap {
+    width: calc(100% - 12px);
+    margin: 58px 6px 16px;
+    padding: 10px 8px;
+    min-height: unset;
+  }
+
+  /* Header: title on top, meta below */
+  .inv-header {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .inv-header-left   { order: 2; min-width: 0; width: 100%; }
+  .inv-header-center { order: 1; width: 100%; }
+  .inv-header-spacer { display: none; }
+
+  .inv-title { font-size: 14px; }
+
+  .inv-meta { width: 100%; }
+  .inv-meta-row { justify-content: flex-end; }
+  .field-meta { flex: 1; width: auto; }
+
+  /* Customer row wraps */
+  .cust-row { flex-wrap: wrap; gap: 4px; }
+  .cust-label { min-width: 0; }
+
+  /* Compact table */
+  .inv-table { font-size: 10px; }
+  .inv-table th,
+  .inv-table td { padding: 3px 2px; }
+
+  .col-row   { width: 22px; }
+  .col-desc  { min-width: 80px; }
+  .col-qty   { width: 36px; }
+  .col-unit  { width: 36px; }
+  .col-price { width: 64px; }
+  .col-total { width: 64px; }
+  .col-del   { width: 24px; }
+
+  .del-btn { width: 18px; height: 18px; font-size: 11px; }
+
+  /* Bottom section stacks */
+  .inv-bottom {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .bottom-left {
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .payment-box {
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    width: 100%;
+  }
+
+  /* Signature boxes stack */
+  .signature-row { flex-direction: column; }
+  .sig-box:first-child { border-left: none; }
+  .sig-box:last-child  { border-top: 1px solid #999; }
+  .sig-box { min-height: 45px; }
+}
+
+/* ===== RESPONSIVE - VERY SMALL MOBILE (max 380px) ===== */
+@media screen and (max-width: 380px) {
+  .btn { font-size: 10px; padding: 5px 7px; }
+
+  .invoice-wrap { padding: 8px 6px; }
+
+  .col-price { width: 54px; }
+  .col-total { width: 54px; }
+  .col-qty   { width: 30px; }
+  .col-unit  { width: 30px; }
+}
 
 /* ===== PRINT STYLES ===== */
 @media print {
