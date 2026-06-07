@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> فاکتور فروش کالا  </title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Toolbar (فقط روی صفحه نمایش) -->
+<div class="toolbar no-print">
+  <button class="btn btn-print" onclick="window.print()">&#128438; پرینت فاکتور</button>
+  <button class="btn btn-add" onclick="addRow()">&#43; افزودن ردیف</button>
+  <button class="btn btn-clear" onclick="clearForm()">&#128465; پاک کردن</button>
+</div>
+
+<!-- Invoice Container -->
+<div class="invoice-wrap" id="invoice">
+
+  <!-- ===== HEADER ===== -->
+  <div class="inv-header">
+    <div class="inv-header-left">
+      <div class="inv-meta">
+        <div class="inv-meta-row">
+          <span class="label-meta">شماره :</span>
+          <input class="field-meta" type="text" id="invNumber" value="۱۱۲-۰۳-۱۴۰۳" placeholder="شماره فاکتور">
+        </div>
+        <div class="inv-meta-row">
+          <span class="label-meta">تاریخ :</span>
+          <input class="field-meta" type="text" id="invDate" placeholder="۱۴۰۳/۰۱/۰۱">
+        </div>
+      </div>
+    </div>
+
+    <div class="inv-header-center">
+      <h1 class="inv-title"> فاکتور فروش   </h1>
+    </div>
+
+    <div class="inv-header-spacer"></div>
+
+  </div>
+
+  <!-- ===== CUSTOMER INFO ===== -->
+  <div class="section-box">
+    <div class="section-title">مشخصات خریدار</div>
+    <div class="customer-grid">
+      <div class="cust-row">
+        <span class="cust-label">نام شخص حقیقی / حقوقی :</span>
+        <input class="cust-input flex1" type="text" id="custName" placeholder="نام خریدار">
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== PRODUCTS TABLE ===== -->
+  <div class="section-box no-pad">
+    <div class="section-title">مشخصات کالا یا خدمات مورد معامله</div>
+    <div class="table-wrap">
+      <table class="inv-table" id="productsTable">
+        <thead>
+          <tr>
+            <th class="col-row">ردیف</th>
+            <th class="col-desc">شرح کالا یا خدمات</th>
+            <th class="col-qty">تعداد</th>
+            <th class="col-unit">واحد</th>
+            <th class="col-price">مبلغ واحد<br>(ریال)</th>
+            <th class="col-total">مبلغ کل<br>(ریال)</th>
+            <th class="col-del no-print">حذف</th>
+          </tr>
+        </thead>
+        <tbody id="rowsBody">
+          <!-- rows inserted by JS -->
+        </tbody>
+        <tfoot>
+          <tr class="total-row">
+            <td colspan="2" class="total-label">جمع کل :</td>
+            <td id="sumQty" class="num-cell"></td>
+            <td></td>
+            <td></td>
+            <td id="sumTotal" class="num-cell"></td>
+            <td class="no-print"></td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+
+  <!-- ===== BOTTOM SECTION ===== -->
+  <div class="inv-bottom">
+    <div class="bottom-right">
+      <div class="amount-words-box">
+        <span class="aw-label">مبلغ به حروف :</span>
+        <span class="aw-value" id="amountWords">—</span>
+        <span class="aw-currency">ریال</span>
+      </div>
+      <div class="notes-box">
+        <span class="notes-label">توضیحات :</span>
+        <input type="text" class="notes-input" id="notes" placeholder="از انتخاب شما متشکریم">
+      </div>
+    </div>
+    <div class="bottom-left">
+      <div class="payment-box">
+        <span class="pay-label">شرایط و نحوه فروش :</span>
+        <label class="pay-opt"><input type="checkbox" id="payCash" checked> نقدی</label>
+        <label class="pay-opt"><input type="checkbox" id="payNonCash"> غیر نقدی</label>
+      </div>
+    </div>
+  </div>
+
+  <div class="signature-row">
+    <div class="sig-box">مهر و امضاء خریدار</div>
+    <div class="sig-box">مهر و امضاء فروشنده</div>
+  </div>
+
+
+</div><!-- end invoice-wrap -->
+
+<script src="js/invoice.js"></script>
+</body>
+</html>
