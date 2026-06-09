@@ -97,6 +97,14 @@ document.addEventListener('focus', function(e) {
   }
 }, true);
 
+function printInvoice() {
+  if (window.AndroidPrint) {
+    window.AndroidPrint.print();
+  } else {
+    window.print();
+  }
+}
+
 setTodayDate();
 addRow();
 addRow();
