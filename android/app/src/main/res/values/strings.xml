@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">فاکتور فروش</string>
+    <string name="title_activity_main">فاکتور فروش</string>
+    <string name="package_name">com.tahawwaa.invoice</string>
+    <string name="custom_url_scheme">com.tahawwaa.invoice</string>
+</resources>

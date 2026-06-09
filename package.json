@@ -1,0 +1,25 @@
+{
+  "name": "print",
+  "version": "1.0.0",
+  "description": "A lightweight invoice generator built with vanilla HTML, CSS, and JavaScript — no frameworks, no dependencies.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tahawwaa/invoice-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tahawwaa/invoice-app/issues"
+  },
+  "homepage": "https://github.com/Tahawwaa/invoice-app#readme",
+  "dependencies": {
+    "@capacitor/android": "^8.4.0",
+    "@capacitor/cli": "^8.4.0",
+    "@capacitor/core": "^8.4.0"
+  }
+}
